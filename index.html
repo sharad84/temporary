@@ -1,4 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharad Sharma - 3D Animation Portfolio</title>
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Basic CSS for a clean, professional look */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9900; /* Accent color for hover */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        /* Portfolio Grid Styling */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item a {
+            display: block;
+            margin-top: 10px;
+            color: #ff9900;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* About & Contact Styling */
+        #about p, #contact p {
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #contact a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
 </head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>SHARAD SHARMA</h1>
+            <p>3D Animation Artist | 15 Years of Experience</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>👋 About Sharad Sharma</h2>
+        <p>
+            With **15 years of dedicated experience** in the realm of **3D Animation**, I specialize in crafting compelling visual narratives, from character animation and architectural visualization to complex VFX shots. My passion lies in breathing life into digital models and pushing the boundaries of creativity. I have worked with studios and clients across various industries, consistently delivering high-quality, impactful animations.
+        </p>
+        <p>
+            **Expertise in:** Modeling, Rigging, Texturing, Lighting, Rendering, and post-production using industry-standard tools like **Maya, Blender, 3ds Max, ZBrush, and After Effects**.
+        </p>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>🎬 Portfolio Showcase</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <img src="placeholder-thumbnail-1.jpg" alt="Project 1 Thumbnail">
+                <h3>Project Title: Animated Short Film</h3>
+                <p>Role: Lead Animator & Rigger</p>
+                <p>Year: 2023</p>
+                <a href="link-to-video-1.html" target="_blank">View Project / Demo Reel</a>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="placeholder-thumbnail-2.jpg" alt="Project 2 Thumbnail">
+                <h3>Project Title: Game Asset Creation</h3>
+                <p>Role: 3D Modeler & Texture Artist</p>
+                <p>Year: 2021</p>
+                <a href="link-to-video-2.html" target="_blank">View Project Details</a>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="placeholder-thumbnail-3.jpg" alt="Project 3 Thumbnail">
+                <h3>Project Title: Architectural Walkthrough</h3>
+                <p>Role: Lighting & Environment Artist</p>
+                <p>Year: 2018</p>
+                <a href="link-to-video-3.html" target="_blank">Watch Walkthrough</a>
+            </div>
+
+            </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>📬 Get In Touch</h2>
+        <p>
+            I am available for freelance work, consultation, and full-time opportunities. Let's create something amazing together!
+        </p>
+        <p>
+            Email: <a href="mailto:sharad.sharma.3d@example.com">sharad.sharma.3d@example.com</a><br>
+            LinkedIn: <a href="https://linkedin.com/in/sharadsharma3d" target="_blank">/in/sharadsharma3d</a><br>
+            ArtStation/Vimeo (Portfolio Link): <a href="https://artstation.com/sharad3d" target="_blank">ArtStation Profile</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sharad Sharma 3D Animation Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+⚙️ Next Steps to Make it Live:
+Replace Placeholders: Change placeholder-thumbnail-1.jpg, link-to-video-1.html, and all related text with Sharad Sharma's actual project details, images, and video links (Vimeo/YouTube embeds or separate project pages work best).
+
+Add Images: Create a folder named images and place your project thumbnails there, updating the src paths in the HTML.
+
+Refine CSS: The embedded <style> block is basic. For a professional finish, you might want to extract it into a separate style.css file and add more refined styling and responsiveness.
+
+Would you like me to help you create a simple CSS file to make the design more visually appealing, or suggest ways to embed videos directly into the portfolio section?
