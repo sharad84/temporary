@@ -3,28 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharad Sharma - 3D Animation Portfolio</title>
+    <title>Sharad Sharma Organization | Spiritual Wisdom & Self-Realization</title>
+    
     <style>
-        /* Basic CSS for a clean, professional look */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+        /* CSS Variables */
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #222222;
+            --color-accent: #8b0000; /* Deep Red for emphasis and tradition */
+            --color-light-border: #cccccc;
         }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em 0;
+        /* Base Styles - Focus on authority and readability */
+        body {
+            font-family: 'Times New Roman', serif; /* Classical, serious font */
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+            font-size: 1.1em; /* Slightly larger base font */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px; 
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--color-light-border);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
             text-align: center;
+            color: var(--color-text);
+            margin-bottom: 40px;
+            font-size: 2.8em;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 30px 0 10px 0;
+            color: var(--color-accent);
+            text-align: center;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--color-bg);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--color-text);
+            text-align: center;
+        }
+
+        header .container {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.6em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         nav ul {
@@ -32,95 +89,176 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin-left: 35px;
         }
 
         nav ul li a {
-            color: white;
+            color: var(--color-text);
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1em;
+            font-weight: 500;
+            padding: 5px 0;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ff9900; /* Accent color for hover */
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
+        /* BANNER / SLIDESHOW STYLES */
+        #banner-section {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
             overflow: hidden;
-            padding: 20px 0;
+            border: 1px solid var(--color-text); /* High-contrast border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        section {
-            padding: 40px 0;
-            border-bottom: 1px solid #ddd;
+        #slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 450px; /* Fixed height for consistency */
         }
 
-        section h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 2em;
-        }
-
-        /* Portfolio Grid Styling */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        #slideshow-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Starts hidden */
+            transition: opacity 1.5s ease-in-out; /* Fading transition */
         }
         
-        .portfolio-item:hover {
-            transform: scale(1.03);
+        #slideshow-image.active {
+            opacity: 1; /* Fade in */
+        }
+        
+        #banner-text {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            color: white; /* Text color over the image */
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* High contrast shadow */
+            padding: 20px;
         }
 
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 10px;
+        #banner-text h2 {
+            font-size: 3.5em;
+            margin: 0;
+            color: white;
+            font-weight: 900;
         }
-
-        .portfolio-item a {
-            display: block;
+        
+        #banner-text p {
+            font-size: 1.5em;
             margin-top: 10px;
-            color: #ff9900;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* About & Contact Styling */
-        #about p, #contact p {
-            max-width: 700px;
-            margin: 20px auto;
+            color: #f0f0f0;
             text-align: center;
         }
 
-        #contact a {
-            color: #ff9900;
-            text-decoration: none;
+        /* Text and Link Styling */
+        p {
+            margin-bottom: 1.5em;
+            text-align: justify;
         }
 
-        footer {
-            background-color: #333;
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #550000;
+            text-decoration: underline;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto 40px auto;
+            padding: 15px 30px;
+            background-color: var(--color-accent);
             color: white;
             text-align: center;
-            padding: 1em 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #550000;
+            text-decoration: none;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .grid-item h4 {
+            font-size: 1.4em;
+            margin-top: 15px;
+            color: var(--color-text);
+        }
+        
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--color-light-border);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8f8f8;
+            color: #666;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+            border-top: 1px solid var(--color-light-border);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            p {
+                text-align: left;
+            }
+            #slideshow-container {
+                height: 300px; /* Shorter height on mobile */
+            }
+            #banner-text h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
@@ -128,82 +266,170 @@
 
     <header>
         <div class="container">
-            <h1>SHARAD SHARMA</h1>
-            <p>3D Animation Artist | 15 Years of Experience</p>
+            <h1>SHARAD SHARMA ORGANIZATION</h1>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#publications">Books</a></li>
+                    <li><a href="#events">Events</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="container">
-        <h2>👋 About Sharad Sharma</h2>
+    <section id="banner-section">
+        <div id="slideshow-container">
+            <img id="slideshow-image" src="images/banner-1.jpg" alt="Sharad Sharma Organization Banner" class="active" />
+            
+            <div id="banner-text">
+                <h2>The Way of Self-Discovery</h2>
+                <p>Spiritual Wisdom for Rational Living</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="mission" class="container">
+        <h2>The Pursuit of Authentic Wisdom</h2>
         <p>
-            With **15 years of dedicated experience** in the realm of **3D Animation**, I specialize in crafting compelling visual narratives, from character animation and architectural visualization to complex VFX shots. My passion lies in breathing life into digital models and pushing the boundaries of creativity. I have worked with studios and clients across various industries, consistently delivering high-quality, impactful animations.
+            The **Sharad Sharma Organization** is dedicated to the dissemination of **Spiritual Wisdom** rooted in ancient texts and informed by contemporary challenges. Sharad Sharma's work seeks to guide individuals toward **self-inquiry, inner freedom, and rational living**. Our core mission is to bridge the gap between abstract spiritual philosophy and the practical realities of modern life.
         </p>
         <p>
-            **Expertise in:** Modeling, Rigging, Texturing, Lighting, Rendering, and post-production using industry-standard tools like **Maya, Blender, 3ds Max, ZBrush, and After Effects**.
+            Through written word, video discourses, and immersive seminars, the Organization illuminates the perennial truths that lead to the dissolution of suffering and the realization of one's fundamental potential.
         </p>
+        <a href="#contact" class="cta-button">Engage With The Teachings</a>
+    </section>
+    
+    <section id="publications" class="container">
+        <h2>📝 Publications: The Written Word</h2>
+        <div class="content-grid">
+            
+            <div class="grid-item">
+                <img src="placeholder-book-1.jpg" alt="Book Cover: The Logic of Freedom">
+                <h4>The Logic of Freedom</h4>
+                <p>Sharad Sharma's seminal work on breaking mental conditioning.</p>
+                <a href="link-to-amazon-book-1">Order Now</a>
+            </div>
+
+            <div class="grid-item">
+                <img src="placeholder-book-2.jpg" alt="Book Cover: Vedanta in the Workplace">
+                <h4>Vedanta in the Workplace</h4>
+                <p>Applying ancient spiritual principles to modern professional stress.</p>
+                <a href="link-to-amazon-book-2">View Details</a>
+            </div>
+
+            <div class="grid-item">
+                <img src="placeholder-book-3.jpg" alt="Book Cover: Daily Meditation Practices">
+                <h4>Daily Meditation Practices</h4>
+                <p>A practical guide to stillness and self-observation.</p>
+                <a href="link-to-amazon-book-3">Download E-Book</a>
+            </div>
+
+        </div>
     </section>
 
-    <section id="portfolio" class="container">
-        <h2>🎬 Portfolio Showcase</h2>
-        <div class="portfolio-grid">
+    <section id="media" class="container">
+        <h2>🎥 Video Discourses & Media</h2>
+        <p style="text-align: center; max-width: 700px; margin: auto;">
+            Sharad Sharma's video discourses offer deep, accessible commentary on spiritual texts, current affairs, and common life problems.
+        </p>
+        <div class="content-grid">
+            <div class="grid-item">
+                <img src="placeholder-video-thumbnail-1.jpg" alt="Video Thumbnail 1">
+                <h4>Understanding Fear and Desire</h4>
+                <p>A 45-minute talk on the root causes of human anxiety.</p>
+                <a href="link-to-youtube-1" target="_blank">Watch Now</a>
+            </div>
+            <div class="grid-item">
+                <img src="placeholder-video-thumbnail-2.jpg" alt="Video Thumbnail 2">
+                <h4>Commentary on The Bhagavad Gita</h4>
+                <p>Ongoing series exploring the practical meaning of the text.</p>
+                <a href="link-to-youtube-series" target="_blank">Access Playlist</a>
+            </div>
+            <div class="grid-item">
+                <img src="placeholder-video-thumbnail-3.jpg" alt="Video Thumbnail 3">
+                <h4>Q&A: Spirituality & Money</h4>
+                <p>Addressing the dilemma of material wealth and inner peace.</p>
+                <a href="link-to-youtube-3" target="_blank">Listen</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="events" class="container">
+        <h2>🗓️ Upcoming Seminars & Retreats</h2>
+        <p style="text-align: center; max-width: 700px; margin: auto;">
+            Join Sharad Sharma for live events and residential retreats focused on intensive self-work and spiritual dialogue.
+        </p>
+        <div style="max-width: 600px; margin: 40px auto; text-align: left;">
+            <div style="border: 1px solid var(--color-accent); padding: 15px; margin-bottom: 20px;">
+                <h4>Residential Retreat: Silence in the Hills</h4>
+                <p style="text-align: left; margin-top: 10px;">**Date:** December 10-15, 2025</p>
+                <p style="text-align: left; margin-top: 0;">**Location:** Rishikesh, India</p>
+                <p style="text-align: left; margin-top: 0;"><a href="link-to-register-event-1">Details & Registration →</a></p>
+            </div>
             
-            <div class="portfolio-item">
-                <img src="placeholder-thumbnail-1.jpg" alt="Project 1 Thumbnail">
-                <h3>Project Title: Animated Short Film</h3>
-                <p>Role: Lead Animator & Rigger</p>
-                <p>Year: 2023</p>
-                <a href="link-to-video-1.html" target="_blank">View Project / Demo Reel</a>
+            <div style="border: 1px solid var(--color-accent); padding: 15px; margin-bottom: 20px;">
+                <h4>Online Seminar: The Art of Letting Go</h4>
+                <p style="text-align: left; margin-top: 10px;">**Date:** November 28, 2025 (8 PM IST)</p>
+                <p style="text-align: left; margin-top: 0;">**Platform:** Zoom Webinar</p>
+                <p style="text-align: left; margin-top: 0;"><a href="link-to-register-event-2">Register for Free →</a></p>
             </div>
-
-            <div class="portfolio-item">
-                <img src="placeholder-thumbnail-2.jpg" alt="Project 2 Thumbnail">
-                <h3>Project Title: Game Asset Creation</h3>
-                <p>Role: 3D Modeler & Texture Artist</p>
-                <p>Year: 2021</p>
-                <a href="link-to-video-2.html" target="_blank">View Project Details</a>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="placeholder-thumbnail-3.jpg" alt="Project 3 Thumbnail">
-                <h3>Project Title: Architectural Walkthrough</h3>
-                <p>Role: Lighting & Environment Artist</p>
-                <p>Year: 2018</p>
-                <a href="link-to-video-3.html" target="_blank">Watch Walkthrough</a>
-            </div>
-
-            </div>
+        </div>
     </section>
 
     <section id="contact" class="container">
-        <h2>📬 Get In Touch</h2>
-        <p>
-            I am available for freelance work, consultation, and full-time opportunities. Let's create something amazing together!
+        <h2>Get In Touch</h2>
+        <p style="text-align: center;">
+            For press inquiries, collaboration, or support, please contact the Organization office.
         </p>
-        <p>
-            Email: <a href="mailto:sharad.sharma.3d@example.com">sharad.sharma.3d@example.com</a><br>
-            LinkedIn: <a href="https://linkedin.com/in/sharadsharma3d" target="_blank">/in/sharadsharma3d</a><br>
-            ArtStation/Vimeo (Portfolio Link): <a href="https://artstation.com/sharad3d" target="_blank">ArtStation Profile</a>
+        <p style="text-align: center;">
+            **General Inquiries:** <a href="mailto:contact@sharadsharmaorganization.org">contact@sharadsharmaorganization.org</a><br>
+            **Media Relations:** <a href="mailto:media@sharadsharmaorganization.org">media@sharadsharmaorganization.org</a>
         </p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Sharad Sharma 3D Animation Portfolio. All Rights Reserved.</p>
+        &copy; 2025 Sharad Sharma Organization. All Rights Reserved.
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageElement = document.getElementById('slideshow-image');
+            
+            // 🚨 IMPORTANT: Define your image file names here (5 to 6 images)
+            const images = [
+                'images/banner-1.jpg',
+                'images/banner-2.jpg',
+                'images/banner-3.jpg',
+                'images/banner-4.jpg',
+                'images/banner-5.jpg'
+            ];
+
+            let currentIndex = 0;
+            const delay = 4000; // Time each image is displayed (4 seconds)
+
+            function updateSlide() {
+                // 1. Hide current image (start fade out)
+                imageElement.classList.remove('active');
+                
+                // 2. Wait for fade out to complete (1.5s based on CSS transition)
+                setTimeout(() => {
+                    // 3. Change the source to the next image
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imageElement.src = images[currentIndex];
+                    
+                    // 4. Show new image (start fade in)
+                    imageElement.classList.add('active');
+                }, 1500); // Wait time matches the CSS transition duration
+            }
+
+            // Start the slideshow after a short initial delay
+            setTimeout(() => {
+                imageElement.classList.add('active');
+                setInterval(updateSlide, delay);
+            }, 100); 
+        });
+    </script>
 
 </body>
 </html>
-⚙️ Next Steps to Make it Live:
-Replace Placeholders: Change placeholder-thumbnail-1.jpg, link-to-video-1.html, and all related text with Sharad Sharma's actual project details, images, and video links (Vimeo/YouTube embeds or separate project pages work best).
-
-Add Images: Create a folder named images and place your project thumbnails there, updating the src paths in the HTML.
-
-Refine CSS: The embedded <style> block is basic. For a professional finish, you might want to extract it into a separate style.css file and add more refined styling and responsiveness.
-
-Would you like me to help you create a simple CSS file to make the design more visually appealing, or suggest ways to embed videos directly into the portfolio section?
